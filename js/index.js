@@ -109,7 +109,7 @@ submit.addEventListener("click", function (e) {
     validation(site_name, /^.{3,}$/) &&
     validation(
       url,
-      /^(https|http|ftp):\/\/(-\.)?([^\s\/?\.#]+\.?)+(\/[^\s]*)?$/
+     /^(https|http|ftp):\/\/(www.?)?[a-zA-Z0-9]{1,}(\.com|\.edu|).{1,}?$/
     )
   ) {
     createData();
