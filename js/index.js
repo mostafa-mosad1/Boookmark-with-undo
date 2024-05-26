@@ -95,20 +95,22 @@ function validation(input, reg) {
 site_name.addEventListener("input", function (e) {
   validation(site_name, /^.{3,}$/);
 });
-// url.addEventListener("input", function (e) {
-//   validation(url, /^(https|http|ftp):\/\/(www.?)?[a-zA-Z0-9]{1,}(\.com|\.edu|).{1,}?$/);
-// });
+url.addEventListener("input", function (e) {
+  validation(
+    url,
+    /^(https|http|ftp):\/\/(www.?)?[a-zA-Z0-9]{1,}(\.com|\.edu|).{1,}?$/
+  );
+});
 
 submit.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (
-    validation(site_name, /^.{3,}$/)
-    // &&
-    // validation(
-    //   url,
-    //   /^(https|http|ftp):\/\/(-\.)?([^\s\/?\.#]+\.?)+(\/[^\s]*)?$/
-    // )
+    validation(site_name, /^.{3,}$/) &&
+    validation(
+      url,
+      /^(https|http|ftp):\/\/(-\.)?([^\s\/?\.#]+\.?)+(\/[^\s]*)?$/
+    )
   ) {
     createData();
   } else {
