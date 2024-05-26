@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>book-marker</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="top-title my-4">
+      <h1 class="title py-2 fs-1">Bookmarker</h1>
+    </div>
+    <div class="container">
+      <div class="content">
+        <div class="head-form">
+          <h2 class="my-class py-4 fs-3">
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <i class="fa-solid fa-circle-plus add"></i>
+        </div>
+
+        <form action="" class="text-start form d-none">
+          <div>
+            <label class="d-block pb-3 fs-4" for="site">
+              <i class="fa-solid fa-book me-1 fs-5"></i>
+              Site Name
+            </label>
+            <input
+              class="form-control w-100 border-0 mb-3 p-2 name"
+              type="text"
+              id="site"
+            />
+          </div>
+          <div>
+            <label class="d-block pb-3 fs-4" for="url">
+              <i class="fa-solid fa-retweet me-1 fs-5"></i>
+              Site URL
+            </label>
+            <input
+              class="form-control w-100 border-0 mb-3 p-2 url"
+              type="url"
+              id="url"
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              (https:// | http:// | ftp://) url.com
+            </div>
+          </div>
+          <button class="px-5 fs-5 text-white m-auto rounded-2 d-block submit">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="my-table mt-4">
+        <table class="table">
+          <thead class="border-black">
+            <tr>
+              <th scope="col">index</th>
+              <th scope="col">Website Name</th>
+              <th scope="col">Visit</th>
+              <th scope="col">Delete</th>
+              <i onclick="undoFun(0)" class="fa-solid fa-rotate-left undo d-none"></i>
+            </tr>
+          </thead>
+          <tbody class="form-parent">
+            <!-- <i class="fa-solid fa-rotate-left undo"></i> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="model hidden bg-white text-start p-4 w-50 m-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div>
+              <span class="dot bg-danger"></span>
+              <span class="dot bg-info"></span>
+              <span class="dot bg-success"></span>
+              <span class="dot bg-gradient"></span>
+            </div>
+          </div>
+          <div class="col-3 ms-auto">
+            <button class="close-pop border-0 bg-transparent d-block ms-auto">
+              <i class="fa-solid fa-circle-xmark fs-3 text-danger p-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h4>Site Name or Url is not valid, Please follow the rules below :</h4>
+      <p>
+        <i class="fa-solid fa-circle-arrow-right text-danger me-3"></i>
+        Site name must contain at least 3 characters
+      </p>
+      <p>
+        <i class="fa-solid fa-circle-arrow-right text-danger me-3"></i>
+        Site URL must be a valid one
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
